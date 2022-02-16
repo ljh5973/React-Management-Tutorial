@@ -1,0 +1,295 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css">
+    <script src="${pageContext.request.contextPath }/resources/js/jquery.js"></script>
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/style.css">
+
+    <script src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/js/index.js"></script>
+</head>
+<body>
+
+    <section class="left-side">
+        <div class="side-container">
+            <ul class="side-content">
+                <li><div><a href="#" id="category-t">TOP <i class="bi bi-plus"></i></a></div></li>
+                <div class="side-content-detail-t">
+                    <div class="side-content-all">
+                        <strong>전체보기</strong>
+                    </div>
+                    <ul class="t-left">
+                       <li><div><a href="">반팔 티셔츠</a></div></li> 
+                       <li><div><a href="">긴팔 티셔츠</a></div></li> 
+                       <li><div><a href="">민소매 티셔츠</a></div></li> 
+                       <li><div><a href="">셔츠/블라우스</a></div></li> 
+                    </ul>
+                    <ul class="t-right">
+                        <li><div><a href="">피케/카라 티셔츠</a></div></li> 
+                        <li><div><a href="">맨투맨/스웨트셔츠</a></div></li> 
+                        <li><div><a href="">후드 티셔츠</a></div></li> 
+                        <li><div><a href="">니트/스웨터</a></div></li> 
+                     </ul>
+                </div>
+
+                <li><div><a href="#" id="category-p">PANTS</a></div></li>
+                <div class="side-content-detail-p">
+                    <div class="side-content-all">
+                        <strong>전체보기</strong>
+                    </div>
+                    <ul class="p-left">
+                       <li><div><a href="">데님 팬츠</a></div></li> 
+                       <li><div><a href="">코튼 팬츠</a></div></li> 
+                       <li><div><a href="">슈트 팬츠/슬랙스</a></div></li> 
+                       <li><div><a href="">트레이닝/조거팬츠</a></div></li> 
+                    </ul>
+                    <ul class="p-right">
+                        <li><div><a href="">숏 팬츠</a></div></li> 
+                        <li><div><a href="">레깅스</a></div></li> 
+                        <li><div><a href="">점프 슈트</a></div></li> 
+                        <li><div><a href="">기타 바지</a></div></li> 
+                     </ul>
+                </div>
+
+                <li><div><a href="#" id="category-o">OUTER</a></div></li>
+                <div class="side-content-detail-o">
+                    <div class="side-content-all">
+                        <strong>전체보기</strong>
+                    </div>
+                    <ul class="o-left">
+                       <li><div><a href="">후드 집업</a></div></li> 
+                       <li><div><a href="">블루종/MA-1</a></div></li> 
+                       <li><div><a href="">레더/라이더스 재킷</a></div></li> 
+                       <li><div><a href="">무스탕/퍼</a></div></li>
+                       <li><div><a href="">슈트/블레이저 재킷</a></div></li>
+                       <li><div><a href="">카디건</a></div></li>
+                    </ul>
+                    <ul class="o-right">
+                        <li><div><a href="">겨울 싱글 코트</a></div></li> 
+                        <li><div><a href="">겨울 더블 코트</a></div></li> 
+                        <li><div><a href="">겨울 기타 코트</a></div></li> 
+                       <li><div><a href="">롱패딩/롱헤비 아우터</a></div></li>
+                       <li><div><a href="">숏패딩/숏헤비 아우터</a></div></li>
+                       <li><div><a href="">헌팅 재킷</a></div></li> 
+                     </ul>
+                </div>
+
+                <li><div><a href="#" id="category-s">SHOES</a></div></li>
+                <div class="side-content-detail-s">
+                    <div class="side-content-all">
+                        <strong>전체보기</strong>
+                    </div>
+                    <ul class="s-left">
+                       <li><div><a href="">구두</a></div></li> 
+                       <li><div><a href="">로퍼</a></div></li> 
+                       <li><div><a href="">힐/펌프스</a></div></li> 
+                       <li><div><a href="">플랫 슈즈</a></div></li> 
+                       <li><div><a href="">블로퍼</a></div></li> 
+                    </ul>
+                    <ul class="s-right">
+                        <li><div><a href="">샌들</a></div></li> 
+                        <li><div><a href="">슬리퍼</a></div></li> 
+                        <li><div><a href="">기타 신발</a></div></li> 
+                        <li><div><a href="">모카신/보트 슈즈</a></div></li> 
+                       <li><div><a href="">부츠</a></div></li> 
+                     </ul>
+                </div>
+
+            </ul>
+        </div>
+
+    </section>
+
+    <!-- detail -->
+    <section class="detail-content">
+        <div class="detail-top">
+        </div>
+        <div class="detail-container">
+            <div class="detail-left">
+                <div class="detail-category">
+                    <a href="#">상의</a>><a href="#">후드티셔츠</a>
+                </div>
+                한정 판매 <strong>COLLEGE LOGO HOODIE NAVY(MG2BSMM401A)</strong> 
+                <div class="detail-img-container">
+                    <div class="detail-bigImg">
+                        <img src="${pageContext.request.contextPath }/resources/img/product/top/t-shirt/t000015.jpg" alt="">
+                    </div>
+                </div>
+                <div class="detail-size">
+                    <h2>size-info</h2><span>사이즈정보</span>
+                    <div class="detail-size-content">
+                        <div><a href="">구매내역 실측 선택</a></div>
+                        <div><a href="">실측 직접입력</a></div>
+                        <div><a href="">측정법</a></div>
+                    </div>
+                </div>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">cm</th>
+                        <th scope="col">총장</th>
+                        <th scope="col">어깨너비</th>
+                        <th scope="col">가슴단면</th>
+                        <th scope="col">소매길이</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">S</th>
+                        <td>66.5</td>
+                        <td>54</td>
+                        <td>60</td>
+                        <td>61</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">M</th>
+                        <td>68.5</td>
+                        <td>56</td>
+                        <td>62.5</td>
+                        <td>62</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">L</th>
+                        <td>70.5</td>
+                        <td>58</td>
+                        <td>65</td>
+                        <td>63</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">XL</th>
+                        <td>72.5</td>
+                        <td>60</td>
+                        <td>67.5</td>
+                        <td>64</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+
+
+
+            <div class="detail-right">
+                <!-- info -->
+               <div class="detail-info">
+                    <div class="detail-info-top">
+                        <p>한정판매</p>
+                    </div>
+                    <h4>Product info 제품정보</h4>
+                    <div class="detail-info">
+                        <ul>
+                            <li>브랜드 / 품번 MAHAGRID / MG2BSMM401ANV</li>
+                            <li>시즌 도움말 보기 / 성별 2021 S/S / 남 여</li>
+                            <li>조회수(1개월) 1.5만 회 이상</li>
+                            <li>누적판매(1년) 1.6천 개 이상(결제완료-반품)</li>
+                            <li>좋아요  6,376</li>
+                            <li>구매 후기 도움말 보기 </li>
+                            <li>4.8 / 후기 1,286개 보기</li>
+                        </ul>
+                    </div>
+                    <div class="detail-option">
+                        <div class="detail-option-cont">
+                                <select name="option1" id="option1">
+                                    <option value="옵션선택">옵션선택</option>
+                                    <option value="네이비">네이비</option>
+                                </select>
+                                <select name="option2" id="option2">
+                                    <option value="옵션선택">옵션선택</option>
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                </select>
+                        </div>
+                    </div>
+                    <div class="sum-total-price">
+                        <span>총 상품 금액</span>
+                        <span class="total-price"></span>
+                    </div>
+                    <div class="size-recommand">
+                        <strong>사이즈 추천</strong>
+                        <p class="box_recommand_size">
+                            구매고객/브랜드 관계자 추천 내역으로 MINe에서는 이를 보증하지 않습니다. 참고용으로만 활용하시기 바랍니다.
+                        </p>
+
+                    </div>
+                    <!-- 옵션 -->
+                    <div class="size-recommand-option">
+                        <ul>
+                            <li>
+                                <p class="size-content">
+                                    [회원추천] (남자 178cm/83kg) 기준 
+                                    적당함
+                                    <strong>네이비 L Size 구매</strong>
+                                    
+                                </p>
+                                <p class="size-date">
+                                    <span>2020-08-08</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="size-content">
+                                    [회원추천] (여자 167cm/52kg) 기준
+                                    적당함 네이비 M Size 구매
+                                    <strong>네이비 M Size 구매</strong>
+                                </p>
+                                <p class="size-date">
+                                    <span>2020-08-08</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="size-content">
+                                    [회원추천] (여자 167cm/52kg) 기준
+                                    적당함 네이비 M Size 구매
+                                    <strong>네이비 M Size 구매</strong>
+                                </p>
+                                <p class="size-date">
+                                    <span>2020-08-08</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="size-content">
+                                    [회원추천] (여자 167cm/52kg) 기준
+                                    적당함 네이비 M Size 구매
+                                    <strong>네이비 M Size 구매</strong>
+                                </p>
+                                <p class="size-date">
+                                    <span>2020-08-08</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 구매버튼 -->
+                    <div class="box-buy-btn">
+                        <div class="buy-btn">
+
+                        </div>
+                        <div class="mylike-btn">
+
+                        </div>
+                        <div class="cart-btn">
+
+                        </div>
+                    </div>
+
+                    <!-- 다른 제품 -->
+                    <div class="explain-product">
+
+                    </div>
+               </div>
+
+
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>

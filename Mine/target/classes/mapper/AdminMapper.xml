@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.itwill.admin.mapper.AdminMapper">
+  
+  	<insert id="insert">
+	insert into fileupload(pcategory,pname,ptitle,pbrand,uniquename,price,pdetail,p_imgaddr)
+	values(#{pCategory}, #{pName}, #{pTitle}, #{pBrand}, #{uniqueName}, #{price}, #{pDetail}, #{p_imgAddr})
+  	</insert>
+  	
+  	<select id="getProductList" resultType="FileUploadVO">
+  		select * from fileupload
+  	</select>
+  </mapper>
