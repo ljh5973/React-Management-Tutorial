@@ -143,8 +143,7 @@
 									<span class="regist-pagetitle">상품 등록</span>
 								</div>
 
-								<form action="registProduct" method="post"
-									enctype="multipart/form-data">
+								<form action="registProduct" method="post">
 
 									<table class="table regist-table">
 										<tr>
@@ -173,12 +172,12 @@
 										</tr>
 										<tr>
 											<th>이름</th>
-											<td><input class="form-control" name="pName" id="name"
+											<td><input class="form-control" name="pName" id="pName"
 												type="text"></td>
 										</tr>
 										<tr>
 											<th>브랜드</th>
-											<td><input class="form-control" name="pBrand" id="brand"
+											<td><input class="form-control" name="pBrand" id="pBrand"
 												type="text"></td>
 										</tr>
 										<tr>
@@ -206,7 +205,7 @@
 											<td colspan="3">
 												<button class="btn btn-danger" onclick="formReset();">초기화</button>
 												<button class="btn btn-success" id="registProductBtn"
-													type="submit">등록</button>
+													type="button">등록</button>
 											</td>
 										</tr>
 									</table>

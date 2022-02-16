@@ -124,3 +124,18 @@ $("#file").change(function() {
 	console.log(this);
     readURL(this); //this는 #file자신 태그를 의미
 });
+
+function formReset(){
+	$("#file").val(null); // 파일
+	$(".img-inner").css("display","none"); // 이미지
+	$("#category").find('option:first').attr('selected','selected'); //종류
+	$("#pName").val('');
+	$("#pBrand").val('');
+	$("#price").val('');
+	$("#uniqueName").val('');
+	$("#pTitle").val('');
+	$("#pDetail").val('');
+	
+}
+
+
