@@ -44,5 +44,23 @@
 		<beans:property name="defaultEncoding" value="utf-8" />
 	</beans:bean>
 
+	<!-- Interceptor 설정 -->
+	<beans:bean id="authInterceptor"
+		class="com.itwill.interceptor.AuthInterceptor"></beans:bean>
+	<beans:bean id="signedInInterceptor"
+		class="com.itwill.interceptor.SignedInInterceptor"></beans:bean>
+		
+	<interceptors>
+		<interceptor><!-- 게시판 기능들 중 로그인이 필수인 서비스들 -->
+			<mapping path="/user/myPageCheck"/>
+			<mapping path="/user/cart"/>
+			<mapping path="/product/payment"/>
+			<beans:ref bean="authInterceptor"/>
+		</interceptor>
+		<interceptor><!-- 아이디/패스워드 확인 후 로그인 성공/실패 처리 -->
+			<mapping path="/user/userLogin"/>
+			<beans:ref bean="signedInInterceptor"/>
+		</interceptor>
+	</interceptors>
 
 </beans:beans>

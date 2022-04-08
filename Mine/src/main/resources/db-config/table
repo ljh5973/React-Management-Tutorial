@@ -21,5 +21,13 @@ create table fileupload(
     price varchar2(100 byte) not null,
     pDetail varchar2(1000 byte) not null,
     p_imgAddr varchar2(300 byte) not null,
-    regdate DATE default sysdate
-);
+    regdate DATE default sysdate);
+
+create table cart(
+	USERID VARCHAR2(100 BYTE) primary key,
+	PRODUCT	VARCHAR2(100 BYTE),
+	QUANTITY	NUMBER	not null,
+	PRICE	NUMBER	not null,
+	DELIVERYFEE	NUMBER,
+	TOTALPRICE	NUMBER	not null);
+

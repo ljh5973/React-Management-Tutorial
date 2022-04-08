@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +17,17 @@
     <script src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
     <script src="${pageContext.request.contextPath }/resources/js/index.js"></script>
     <script src="${pageContext.request.contextPath }/resources/js/user.js"></script>
+	<style>
+	.valid {
+		color: green;
+		display: none;
+	}
+	.invalid{
+		color: red;
+		display: none;
+	}
+	</style>
+
 </head>
 <body>
     <section class="member-join">
@@ -34,7 +46,9 @@
                     <div class="join-form">
                         <div class="form-set">
                             <label for="memberId" class="j-form-label">아이디</label>
-                            <input type="text" name="userId" class="j-input" placeholder="아이디 입력(5~11자)" minlength="5" maxlength="11">
+                            <input type="text" id="userId" name="userId" class="j-input" placeholder="아이디 입력(5~11자)" minlength="5" maxlength="11">
+                            <div class="valid">사용 가능한 아이디입니다</div>
+                            <div class="invalid">이미 사용중인 아이디입니다</div>
                         </div>
                         <div class="form-set">
                             <label for="memberName" class="j-form-label">이름</label>
@@ -79,10 +93,6 @@
                         </div>
                         <button type="submit" class="join-submit">가입하기</button>
                     </div>
-    
-                   
-                    
-                
             </form>
         </div>
 
@@ -90,6 +100,22 @@
      <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
     
+    $(document).ready(function () {
+    	$('#userId').change(function (event){
+    		var params = {userId: $(this).val()};
+    		$.post('./userIdCheck', params, function (response){
+    			if(response == 'valid') {
+    				$('.valid').show();
+    				$('.invalid').hide();
+    				$('.join-submit').removeAttr('disabled');
+    			} else {
+    				$('.valid').hide();
+    				$('.invalid').show();
+    				$('.join-submit').attr('disabled','true');
+    			}
+    		});
+    	});
+    });
    	function exePost() {
    	    daum.postcode.load(function() {
    	        new daum.Postcode({
@@ -132,6 +158,8 @@
    	        }).open();
    	    });
    	}
+ 
+    
     </script>
     
 </body>

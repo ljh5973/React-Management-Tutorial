@@ -205,7 +205,7 @@
 											<td colspan="3">
 												<button class="btn btn-danger" onclick="formReset();">초기화</button>
 												<button class="btn btn-success" id="registProductBtn"
-													type="button">등록</button>
+													type="submit">등록</button>
 											</td>
 										</tr>
 									</table>

@@ -19,7 +19,7 @@
 <body>
     <section class="member-join">
         <div class="join-container">
-            <form action="">
+            <form action="userLogin" method = "post">
                 <div class="header-area">
                     <div class="logo">
                         <h2>
@@ -33,11 +33,11 @@
                     <div class="login-form">
                         <div class="form-set">
                             <label for="memberId" class="j-form-label">아이디</label>
-                            <input type="text" name="id" class="l-input" placeholder="아이디 입력(5~11자)" minlength="5" maxlength="11">
+                            <input type="text" name="userId" class="l-input" placeholder="아이디 입력(5~11자)" minlength="5" maxlength="11">
                         </div>
                         <div class="form-set">
                             <label for="memberName" class="j-form-label">비밀번호</label>
-                            <input type="password" name="name" class="l-input">
+                            <input type="password" name="userPw" class="l-input">
                         </div>
                         <div class="login-auto">
                             <div class="auto-check">
@@ -53,7 +53,9 @@
 
                         <button type="submit" class="join-submit">로그인</button>
                     </div>
-    
+    				<div>
+    					<input type="hidden" name="url" value="${url}"/>
+    				</div>
                    
                     
                 
@@ -61,6 +63,14 @@
         </div>
 
     </section>
+    
+    <script>
+    var msg="${msg}";
+    if(msg != ""){
+    	alert(msg);
+    }
+    
+    </script>
     
 </body>
 </html>

@@ -20,23 +20,26 @@
     <script src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
     <script src="${pageContext.request.contextPath }/resources/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath }/resources/js/index.js"></script>
+    <script src="https://kit.fontawesome.com/fd06a08b1d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
     <header>
-        <H1>MINE</H1>
+        <H1><a href="#">MINE</a></H1>
 
         <nav>
             <ul>
-                <li><a href="user/userLogin">로그인</a> </li>
-                <li><a href="user/userJoin">회원가입</a> </li>
-                <li><a href="#">마이페이지</a> </li>
-                <li><a href="#">최근 본 상품</a> </li>
-                <li><a href="#">관심 제품</a> </li>
-                <li><a href="#">장바구니</a> </li>
-                <li><a href="#">주문배송조회</a> </li>
-                <li><a href="#">고객센터</a> </li>
+            	<c:if test="${empty loginUserId}">
+                <li><a href="user/userLogin">LOGIN</a> </li>
+                <li><a href="user/userJoin">JOIN</a> </li>
+                </c:if>
+                <c:if test="${not empty loginUserId}">
+                <li><a href="user/logout">LOGOUT</a></li>
+                </c:if>
+                <li><a href="user/myPageCheck">MYPAGE</a> </li>
+                <li><a href="user/cart">CART</a> </li>
+                <li><a href="#">HELP</a> </li>
             </ul>
         </nav>
     </header>
@@ -45,6 +48,7 @@
 
     <aside class="quick-area">
         <ul class="quick-list">
+            <li><a href="#">최근 본 상품</a></li>
             <li><a href="#">
                     <p>전화문의</p><small>010-1111-2222</small>
                 </a></li>
@@ -52,39 +56,45 @@
                     <p>카카오톡</p><small>1:1상담</small>
                 </a></li>
             <li><a href="#">오시는길</a></li>
+            <li><a href="#"><i class="fa-solid fa-circle-chevron-up"></i></a></li>
+            <li><a href="#scrollbottom"><i class="fa-solid fa-circle-chevron-down"></i></a></li>
         </ul>
     </aside>
 
 
     <section class="main">
 
-   
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
 
             <!-- The slideshow -->
-        
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="d-block w-100" src="${pageContext.request.contextPath }/resources/img/slider/slide1.jpg" alt="First slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="${pageContext.request.contextPath }/resources/img/slider/slide2.jpg" alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="${pageContext.request.contextPath }/resources/img/slider/slide3.jpg" alt="Third slide">
-              </div>
+                <div class="carousel-item active">
+                    <img src="${pageContext.request.contextPath }/resources/img/slider/almond.jpg" alt="Los Angeles">
+                </div>
+                <div class="carousel-item">
+                    <img src="${pageContext.request.contextPath }/resources/img/slider/mad.jpg" alt="Chicago">
+                </div>
+                <div class="carousel-item">
+                    <img src="${pageContext.request.contextPath }/resources/img/slider/ss.jpeg" alt="New York">
+                </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
 
-      
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+
+        </div>
 
 
 
@@ -266,7 +276,7 @@
     <section class="main-content">
         <ul class="clearfix">
             <li>
-                <img src="${pageContext.request.contextPath }/resources/img/product/top/t-shirt/t000001.jpg" alt="">
+                <img src="${pageContext.request.contextPath }/resources/img/product/top/t-shirt/1.jpg" alt="">
                 <h2>Product with Variants</h2>
                 <h3>"★★★☆☆ "
                     <span class="red">2REIVIEW(S)</span>
@@ -279,7 +289,7 @@
                 </div>
             </li>
             <li>
-                <img src="${pageContext.request.contextPath }/resources/img/product/top/t-shirt/t000002.jpg" alt="">
+                <img src="${pageContext.request.contextPath }/resources/img/product/top/t-shirt/1-2.jpg" alt="">
                 <h2>Product with Variants</h2>
                 <h3>"★★★☆☆ "
                     <span class="red">2REIVIEW(S)</span>
@@ -287,12 +297,12 @@
                     "$59.00"
                 </h3>
                 <div class="hover-content">
-                    <a href="detail.html">Jacket(상세)</a>
+                    <a href="product/detail">Jacket(상세)</a>
 
                 </div>
             </li>
             <li>
-                <img src="${pageContext.request.contextPath }/resources/img/product/top/t-shirt/t000003.jpg" alt="">
+                <img src="${pageContext.request.contextPath }/resources/img/product/top/t-shirt/1-3.jpg" alt="">
                 <h2>Product with Variants</h2>
                 <h3>"★★★☆☆ "
                     <span class="red">2REIVIEW(S)</span>
@@ -300,12 +310,12 @@
                     "$59.00"
                 </h3>
                 <div class="hover-content">
-                    <a href="#">Jacket(상세)</a>
+                    <a href="product/detail">Jacket(상세)</a>
 
                 </div>
             </li>
             <li>
-                <img src="${pageContext.request.contextPath }/resources/img/product/top/t-shirt/t000004.jpg" alt="">
+                <img src="${pageContext.request.contextPath }/resources/img/product/top/t-shirt/1-4.jpg" alt="">
                 <h2>Product with Variants</h2>
                 <h3>"★★★☆☆ "
                     <span class="red">2REIVIEW(S)</span>
@@ -313,12 +323,12 @@
                     "$59.00"
                 </h3>
                 <div class="hover-content">
-                    <a href="#">Jacket(상세)</a>
+                    <a href="product/detail">Jacket(상세)</a>
 
                 </div>
             </li>
             <li>
-                <img src="${pageContext.request.contextPath }/resources/img/product/top/t-shirt/t000005.jpg" alt="">
+                <img src="${pageContext.request.contextPath }/resources/img/product/top/t-shirt/4.jpg" alt="">
                 <h2>Product with Variants</h2>
                 <h3>"★★★☆☆ "
                     <span class="red">2REIVIEW(S)</span>
@@ -326,12 +336,12 @@
                     "$59.00"
                 </h3>
                 <div class="hover-content">
-                    <a href="#">Jacket(상세)</a>
+                    <a href="product/detail">Jacket(상세)</a>
 
                 </div>
             </li>
             <li>
-                <img src="${pageContext.request.contextPath }/resources/img/product/top/t-shirt/t000006.jpg" alt="">
+                <img src="${pageContext.request.contextPath }/resources/img/product/top/t-shirt/5.jpg" alt="">
                 <h2>Product with Variants</h2>
                 <h3>"★★★☆☆ "
                     <span class="red">2REIVIEW(S)</span>
@@ -339,12 +349,12 @@
                     "$59.00"
                 </h3>
                 <div class="hover-content">
-                    <a href="#">Jacket(상세)</a>
+                    <a href="product/detail">Jacket(상세)</a>
 
                 </div>
             </li>
             <li>
-                <img src="${pageContext.request.contextPath }/resources/img/product/top/t-shirt/t000007.jpg" alt="">
+                <img src="${pageContext.request.contextPath }/resources/img/product/top/t-shirt/6.jpg" alt="">
                 <h2>Product with Variants</h2>
                 <h3>"★★★☆☆ "
                     <span class="red">2REIVIEW(S)</span>
@@ -352,12 +362,12 @@
                     "$59.00"
                 </h3>
                 <div class="hover-content">
-                    <a href="#">Jacket(상세)</a>
+                    <a href="product/detail">Jacket(상세)</a>
 
                 </div>
             </li>
             <li>
-                <img src="${pageContext.request.contextPath }/resources/img/product/top/t-shirt/t000008.jpg" alt="">
+                <img src="${pageContext.request.contextPath }/resources/img/product/top/t-shirt/7.jpg" alt="">
                 <h2>Product with Variants</h2>
                 <h3>"★★★☆☆ "
                     <span class="red">2REIVIEW(S)</span>
@@ -365,7 +375,7 @@
                     "$59.00"
                 </h3>
                 <div class="hover-content">
-                    <a href="#">Jacket(상세)</a>
+                    <a href="product/detail">Jacket(상세)</a>
 
                 </div>
             </li>
@@ -387,63 +397,48 @@
 
 
 
-    <footer>
-        <div class="footer-top">
-            <div class="footer-top-left">
-                <h2>고객센터| 1544-1544</h2>
-                <span>상담시간 10:00 - 17:00 / 점심시간 12:00 - 13:00
-                    주말 및 공휴일은 휴무이오니 문의게시판을 이용해주세요
-                </span>
-            </div>
-            <div class=footer-top-right>
-                <h2>교환/반송주소</h2>
-                <span>경기도 광명시 *** *** *** 건물 (202 1)
-                </span>
-            </div>
+    <footer class="footer">
+        <div>
+        <ul class="footer-info">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">COMPANY</a></li>
+            <li><a href="#">AGREEMENT</a></li>
+            <li><a href="#">PRIVACY POLICY</a></li>
+            <li><a href="#">GUIDE</a></li>
+        </ul>
         </div>
-        <div class="footer-bottom">
-            <div class=footer-info>
-                <h2>info</h2>
-                <p>회사소개</p>
-                <p>이용약관</p>
-                <p>이메일문의</p>
-                <p>개인정보취급방침</p>
-                <p>사업자정보확인</p>
-            </div>
-            <div class=footer-info>
-                <h2>게시판</h2>
-                <p>공지사항</p>
-                <p>상품문의</p>
-                <p>취소/교환/반품</p>
-                <p>배송문의</p>
-                <p>상품후기</p>
-                <p>미확인입금자명단</p>
-                <p>VIP전용</p>
-            </div>
-            <div class=footer-info>
-                <h2>계좌정보</h2>
-                <p>KB 400000-01-200000</p>
-                <p>농협 300-0000-0000-00</p>
-                <p>우리 1111-111-888888</p>
-                <p>신한 111-111-111111</p>
-                <p>예금주 : (주)유기농</p>
-            </div>
-            <div class=footer-info>
-
-                <h2>ABOUT MAYBLUE</h2>
-                <p>(주)유기농 | 대표 이진호</p>
-
-                <p>전화 1544-1544 | 팩스 02-1234-5678</p>
-
-                <p>경기도 광명시 *** *** *** 건물 (202 1) (우)10000</p>
-
-                <p>사업자등록번호 200-00-22222</p>
-
-                <p>개인정보관리책임자 이진호</p>
-
-                <p>제휴문의 uginongeasynong@uginong.com</p>
-            </div>
+        <div>
+        <ul class="footer-info">
+            <li><a href="#">게시판</a></li>
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">상품문의</a></li>
+            <li><a href="#">취소/교환/반품</a></li>
+            <li><a href="#">배송문의</a></li>
+            <li><a href="#">상품후기</a></li>
+            <li><a href="#">미확인입금자명단</a></li>
+            <li><a href="#">VIP전용</a></li>
+        </ul>
         </div>
+        <div class="footer-info">
+           <ul>
+               <li>(주)유기농 대표 이진호</li>
+               <li>전화 1544-1544</li>
+               <li>팩스 02-1234-5678</li>
+               <li>경기도 광명시 *** *** *** 건물 (202 1) (우)10000</li>
+               <li>사업자등록번호 200-00-22222</li>
+               <li>개인정보관리책임자 이진호</li>
+               <li>제휴문의 uginongeasynong@uginong.com</li>
+           </ul>
+           <ul>
+               <li>KB 400000-01-200000</li>
+               <li>농협 300-0000-0000-00</li>
+               <li>우리 1111-111-888888</li>
+               <li>신한 111-111-111111</li>
+               <li>예금주 : (주)유기농</li>
+           </ul>
+           <p>COPYRIGHT (C) ALL RIGHTS RESERVED.</p>
+        </div>
+        <div id="scrollbottom"></div>
     </footer>
 
 

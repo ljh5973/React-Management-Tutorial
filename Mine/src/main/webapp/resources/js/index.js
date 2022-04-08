@@ -40,5 +40,56 @@ $(document).ready(function(){
             $(".side-content-detail-s").css('display','none')
         }
     }
+
+    // 차트 만들기
+    new Chart(document.getElementById("age-chart"), {
+        type: 'bar',
+        data: {
+          labels: ["~18세", "19~23세", "24~28세","29~33세","34~39세","40세~"],
+          datasets: [{
+            label: "%",
+            backgroundColor: ["#0052A5","#0052A5","#0052A5","#0052A5","#0052A5","#0052A5"],
+            data: [8,29,32,17,7,7]
+          }]
+        },
+        options: {
+          responsive: false,
+          legend: {display: false },
+          title: {
+            display: true,
+            text: '연령'
+            }
+          }
+        });
+    new Chart(document.getElementById("gender-chart"), {
+        type: 'doughnut',
+        data: {
+            labels: ["남성", "여성"],
+            datasets: [
+            {
+                label: "%",
+                backgroundColor: ["#4e6dd1","#d472bf"],
+                data: [82,18]
+            }
+            ]
+        },
+        options: {
+            responsive: false,
+            title: {
+            display: true,
+            text: '성별'
+            }
+        } 
+    });
     
+    function show () {
+        document.querySelector(".background").className = "background show";
+      }
+      
+      function close () { 
+        document.querySelector(".background").className = "background";
+      }
+      
+      document.querySelector("#show").addEventListener('click', show);
+      document.querySelector("#close").addEventListener('click', close);
 })

@@ -4,10 +4,27 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="com.itwill.user.mapper.UserMapper">
-
-
-	<insert id="join" parameterType="com.itwill.command.UserVO">
-		insert into userInfo(userId, userPw, userName, userPhone,userEmail, userZipCode, userAddr, userAddrDetail, userBirth) values (#{userId}, #{userPw}, #{userName}, #{userPhone}, #{userEmail}, #{userZipCode},#{userAddr},#{userAddrDetail},#{userBirth})
+	<insert id="join" parameterType="UserVO">
+	INSERT INTO ${TABLE_USERINFO} (${COL_USERID},${COL_USERNAME},${COL_USERPW},${COL_USERPHONE},${COL_USEREMAIL},${COL_USERZIPCODE},${COL_USERADDR},${COL_USESRADDRDETAIL},${COL_USERBIRTH})
+	VALUES (#{userId},#{userName},#{userPw},#{userPhone},#{userEmail},#{userZipCode},#{userAddr},#{userAddrDetail},#{userBirth})
 	</insert>
+	
+	<select id="login" resultType="UserVO">
+	SELECT * FROM ${TABLE_USERINFO} WHERE ${COL_USERID} = #{userId} AND ${COL_USERPW} = #{userPw}
+	</select>
+	
+	<select id="check" resultType="UserVO">
+	SELECT * FROM ${TABLE_USERINFO} WHERE ${COL_USERID} = #{userId}
+	</select>
+	
+	<select id="cartSelect" resultType="cartVO">
+	SELECT * FROM ${TABLE_CART} WHERE ${COL_USESRID} = #{userId}
+	</select>
+	
+	<insert id="cartInsert" parameterType="cartVO">
+	INSERT INTO ${TABLE_CART} (${COL_PRODUCT},${COL_QUANTITY},${COL_PRICE},${COL_DELIVERYFEE},${COL_TOTALPRICE},${COL_USERID})
+	VALUES (#{product},#{quantity},#{price},#{deliveryFee},#{totalPrice},#{userId})
+	</insert>
+	
 
   </mapper>

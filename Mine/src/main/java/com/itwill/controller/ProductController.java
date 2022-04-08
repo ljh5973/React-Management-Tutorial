@@ -15,4 +15,9 @@ public class ProductController {
 	public String detail() {
 		return "product/detail";
 	}
+	
+	@RequestMapping("/payment")
+	public String payment() {
+		return "product/payment";
+	}
 }
